@@ -1,0 +1,1295 @@
+:root {
+    /* Palette: Warm Neutrals */
+    --bg-color: #F8F8F6;
+    /* Soft Off-white */
+    --bg-warm: #EFEFEA;
+    /* Muted warm beige */
+    --text-color: #3D3D3B;
+    /* Warm Charcoal - softer than black */
+    --text-muted: #787875;
+    /* Warm Grey */
+    --accent-color: #D4CFC6;
+    /* Subtle Taupe */
+    --accent-blush: #E8DED8;
+    /* Muted Blush (very subtle) */
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Manrope', sans-serif;
+
+    /* Spacing System */
+    --spacing-gutter: 2rem;
+    /* 32px */
+    --spacing-section: 120px;
+    /* Large breathable vertical spacing */
+    --spacing-element: 2rem;
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --spacing-section: 160px;
+        --spacing-gutter: 2.5rem;
+        /* 40px */
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    /* Generous line height */
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--spacing-element);
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: var(--spacing-element);
+}
+
+h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-element);
+}
+
+p.subline {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: var(--spacing-element);
+}
+
+p.body-copy {
+    font-size: 1.15rem;
+    color: var(--text-color);
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--spacing-gutter);
+    row-gap: var(--spacing-element);
+}
+
+.section-padding {
+    padding: var(--spacing-section) 0;
+}
+
+.full-height {
+    min-height: 100vh;
+}
+
+/* Images */
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+    /* Very subtle rounding */
+}
+
+/* Buttons & Links */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    border-radius: 999px;
+    /* Pill shape */
+    background-color: transparent;
+    /* Clean outline only */
+}
+
+.btn:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2rem 3rem;
+    /* Aligned with B&O spacing */
+    display: flex;
+    justify-content: flex-end;
+    /* Shop link stays right */
+    align-items: center;
+    z-index: 1000;
+    mix-blend-mode: difference;
+    color: white;
+    /* Inversion for mix-blend-mode */
+}
+
+/* Logo Component */
+.brand-logo-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+}
+
+.brand-logo-text {
+    font-family: var(--font-heading);
+    /* Playfair Display */
+    font-size: 2rem;
+    /* Adjusted for navbar */
+    color: #8C7B70;
+    /* Warm muted brown */
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.smile-curve {
+    width: 40px;
+    height: 10px;
+    border-bottom: 2px solid #8C7B70;
+    border-radius: 50%;
+    margin-bottom: 4px;
+    /* Sits above text */
+    opacity: 0.9;
+}
+
+/* Navbar Logo specific size */
+.navbar .brand-logo-text {
+    font-size: 1.8rem;
+}
+
+.navbar .smile-curve {
+    width: 32px;
+    height: 8px;
+    margin-bottom: 2px;
+}
+
+/* Navbar Shop Link (Mirrored) */
+.nav-shop-link {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    padding: 0;
+}
+
+.nav-shop-link:hover {
+    opacity: 0.7;
+    background: none;
+    color: white;
+}
+
+/* Hero Section (B&O Redesign) */
+.hero-redesign {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+/* Navbar styles handled globally, ensuring generic compatibility */
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #EFEFEA;
+}
+
+.relative-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Push content towards bottom naturally */
+    padding-bottom: 0;
+}
+
+.hero-content-wrapper {
+    flex-grow: 1;
+    /* Takes up available space */
+    display: flex;
+    align-items: center;
+    /* Center text vertically in this space */
+    padding-left: 0;
+    /* Strict alignment with container */
+}
+
+.hero-text-block {
+    width: 40%;
+    /* Strict width control */
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Breathing room */
+    padding-left: 0;
+    /* Strict alignment */
+}
+
+/* Brand Label: Small, Uppercase, Tracked */
+.brand-label {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    /* Generous tracking */
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: 500;
+}
+
+/* Headline: Editorial Serif, High Contrast */
+.hero-redesign h1 {
+    font-family: var(--font-heading);
+    font-size: 3.8rem;
+    /* Decreased from 5rem */
+    line-height: 1.1;
+    font-weight: 400;
+    /* Regular weight for elegance */
+    margin-bottom: 0.5rem;
+    color: #2A2A28;
+    /* Deep warm grey, almost black */
+    letter-spacing: -0.01em;
+}
+
+/* Subline: Clean Sans, Light, Muted */
+.hero-redesign .subline {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #5A5A58;
+    /* Muted grey */
+    font-weight: 300;
+    margin-bottom: 0;
+    max-width: 80%;
+}
+
+/* Bottom Nav / Divider Area */
+.hero-bottom-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    /* Vertical breathing room */
+    border-top: 1px solid rgba(61, 61, 59, 0.2);
+    /* Thin subtle divider */
+    margin-bottom: 2rem;
+    position: relative;
+    /* Ensure baseline alignment */
+    line-height: 1;
+}
+
+/* SCROLL TO DISCOVER (Left) */
+.nav-link-left {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    /* Increased tracking */
+    color: #fff;
+    /* Forcing white as requested for overlay feel */
+    text-decoration: none;
+    opacity: 0.9;
+    cursor: default;
+    /* Informational only */
+    pointer-events: none;
+    /* "No button styling", "not interactive" */
+}
+
+/* Make sure the divider is also light if the text is white */
+.hero-bottom-nav {
+    border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+/* SHOP CTA (Right) - Pill Button */
+.nav-link-right {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    text-decoration: none;
+
+    /* Pill Styling */
+    background-color: #fff;
+    color: #000;
+    padding: 12px 28px;
+    border-radius: 999px;
+    /* Pill shape */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link-right:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+    .hero-redesign h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text-block {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text-block {
+        width: 100%;
+        padding-right: 2rem;
+    }
+
+    .hero-redesign h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-bottom-nav {
+        padding: 1.5rem 0;
+        margin-bottom: 1rem;
+        flex-direction: row;
+    }
+
+    .brand-label {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Adjust for mobile pill */
+    .nav-link-right {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Purpose Section */
+.purpose {
+    text-align: center;
+}
+
+.purpose-content {
+    grid-column: 3 / span 8;
+    /* Narrow center (6 cols) */
+}
+
+.purpose h2 {
+    font-size: 3.8rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.purpose p.body-copy {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+.purpose.section-padding {
+    padding-top: var(--spacing-section);
+    padding-bottom: calc(var(--spacing-section) * 1.2);
+}
+
+/* Use Context */
+/* Use Context */
+/* Use Context */
+.context.container {
+    /* Override default container max-width */
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+.context-image {
+    grid-column: 1 / -1;
+    /* Full width */
+    margin-top: var(--spacing-element);
+    margin-bottom: 0;
+    position: relative;
+    /* Context for absolute caption */
+}
+
+.context-image img {
+    width: 100%;
+    height: auto;
+    /* Allow height to scale naturally */
+    max-height: none;
+    /* Remove constraint */
+    object-fit: cover;
+    display: block;
+    /* Remove inline spacing */
+}
+
+/* Image Caption Overlay */
+.image-caption-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 48px 48px 64px;
+    /* Generous padding as requested */
+    text-align: right;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    /* Caption scale */
+    font-weight: 300;
+    /* Light */
+    color: #F9F9F9;
+    /* Soft off-white */
+    z-index: 10;
+    max-width: 450px;
+    /* Prevent spanning too wide */
+    letter-spacing: normal;
+
+    /* Subtle bottom gradient for readability */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.15) 0%, transparent 100%);
+    width: 100%;
+    /* Gradient spans full width if text is right aligned */
+    pointer-events: none;
+    /* Let clicks pass through */
+
+    /* Text alignment needs to be strictly right */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+
+
+/* Context Headline - Matched to Purpose Section */
+.context h2 {
+    font-size: 3.8rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.context-text {
+    grid-column: 3 / span 8;
+    /* Constrain width to preserve original reading measure within wider container */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 2rem;
+}
+
+/* Ergonomics */
+.ergonomics {
+    align-items: start;
+    padding-top: calc(var(--spacing-section) * 1.3);
+    padding-bottom: calc(var(--spacing-section) * 1.3);
+}
+
+.ergo-image {
+    grid-column: 1 / span 6;
+    display: flex;
+    justify-content: center;
+    /* Center the reduced image */
+    align-items: center;
+}
+
+/* Ergo Image Styling */
+.ergo-image img,
+.ergo-image video {
+    width: 90%;
+    /* Increased presence */
+    height: auto;
+    border-radius: 24px;
+    /* Soft rounded corners */
+    /* Animation handling */
+    opacity: 0;
+    animation: gentleFade 2s ease-out forwards;
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+.ergo-image video {
+    object-fit: cover;
+}
+
+.ergo-image:hover img,
+.ergo-image:hover video {
+    transform: scale(1.02);
+    /* Subtle scale up */
+}
+
+@keyframes gentleFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.ergo-text {
+    grid-column: 8 / span 5;
+}
+
+/* Accordion */
+.accordion-prelude {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+    /* Let section-padding handle it, or adjust if inner spacing needed */
+}
+
+.accordion-section {
+    border-top: 1px solid var(--accent-color);
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.accordion-content p {
+    padding-bottom: 1.5rem;
+    color: var(--text-muted);
+    max-width: 600px;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 300px;
+}
+
+/* Testimonial */
+/* Testimonial Gallery */
+/* Testimonial Gallery */
+.testimonial-gallery {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Fix: The mask cuts off the header if applied to the whole section. 
+   We should move the mask to the track wrapper. 
+   But the requested edit is just to add styles. 
+   I will move the mask to .gallery-track-wrapper below.
+*/
+
+.testimonial-header {
+    grid-column: 2 / span 10;
+    text-align: center;
+    margin-bottom: 1rem;
+    /* Space handled by container padding too */
+}
+
+.trust-heading {
+    font-family: var(--font-body);
+    /* Sans-serif as requested */
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+/* Editorial Sign-Up (Mamalap Circle) */
+
+.editorial-signup {
+    position: relative;
+    width: 100%;
+    background-color: #F9F8F6;
+    /* Soft warm cream */
+    padding: 4rem 0;
+    /* Reduced padding for intimacy */
+    overflow: hidden;
+}
+
+.align-center {
+    align-items: center;
+}
+
+/* IMAGE COLUMN (Left) */
+.signup-image-col {
+    grid-column: 2 / span 5;
+    position: relative;
+    width: 100%;
+    /* Fill height but use padding to reduce visual size of image by ~15-20% */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    /* creates the reduction in visual size */
+}
+
+.alive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    /* Softer rounded corners */
+    transform: scale(1);
+    transition: transform 1.5s ease;
+    /* Slower transition */
+    will-change: transform;
+}
+
+/* Hover Motion: Continuous Breathing */
+.editorial-signup:hover .alive-image {
+    animation: breathe 10s infinite alternate ease-in-out;
+    /* Slower */
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.015);
+    }
+
+    /* Very subtle */
+}
+
+/* CONTENT COLUMN (Right) */
+.signup-content-col {
+    grid-column: 7 / span 5;
+    /* Start earlier to close gap, widen container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 1rem;
+    /* Reduced padding to shift text left */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+/* Decorative Accent (Subtle Star/Sparkle) */
+.signup-content-col::after {
+    content: "✦";
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    opacity: 0.1;
+    /* Extremely light */
+    transition: opacity 0.8s ease, transform 10s infinite linear;
+}
+
+.editorial-signup:hover .signup-content-col::after {
+    opacity: 0.2;
+    transform: rotate(20deg);
+}
+
+.signup-content-col .eyebrow {
+    font-size: 0.7rem;
+    /* Reduced */
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.signup-content-col h2 {
+    font-size: 2rem;
+    /* Reduced from 2.5rem */
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.signup-content-col .subline {
+    font-size: 0.95rem;
+    /* Reduced */
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    /* Increased breathability */
+}
+
+/* Benefit List */
+.benefit-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.benefit-list li {
+    font-size: 0.85rem;
+    /* Reduced */
+    color: var(--text-color);
+    margin-bottom: 0.4rem;
+    position: relative;
+    padding-left: 1.25rem;
+    font-weight: 300;
+}
+
+.benefit-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Form Styling */
+.signup-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    /* Tighter */
+}
+
+.form-row {
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.form-input {
+    padding: 0.8rem 1rem;
+    /* Slightly smaller padding */
+    border: 1px solid rgba(209, 209, 203, 0.6);
+    /* Thinner/Softer border */
+    background: transparent;
+    border-radius: 12px;
+    /* Soft rounded */
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--text-color);
+}
+
+.form-input.half {
+    width: 50%;
+}
+
+.form-input.full {
+    width: 100%;
+}
+
+.form-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.form-consent input {
+    margin-top: 0.15rem;
+    opacity: 0.6;
+}
+
+.signup-form .btn {
+    align-self: flex-start;
+    min-width: 140px;
+    padding: 0.8rem 2rem;
+    /* Adjusted for scale */
+    font-size: 0.9rem;
+    border-radius: 50px;
+    /* Pill */
+    border: 1px solid var(--text-color);
+    /* Soft outline default? Or filled? Prompt: Outlined or softly filled */
+    /* Assuming .btn styles handle base, but just ensuring radius */
+}
+
+.signup-form .btn:hover {
+    border-color: var(--text-color);
+    /* Just soft change */
+    background-color: rgba(61, 61, 59, 0.05);
+    /* Very soft fill on hover */
+    transform: none;
+    /* No scale jump */
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .editorial-signup {
+        padding: 3rem 0;
+    }
+
+    .signup-image-col {
+        grid-column: 1 / -1;
+        margin-bottom: 2rem;
+        padding: 0;
+        /* Reset extra padding on mobile for full width? Or keep for "small" feel? */
+        /* Prompt says "Scale... reduce image size". Let's keep a bit of padding or margin */
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        order: 1;
+    }
+
+    .signup-content-col {
+        grid-column: 1 / -1;
+        padding-left: 0;
+        padding-top: 0;
+        order: 2;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-input.half {
+        width: 100%;
+    }
+
+    /* Disable hover motion on mobile */
+    .editorial-signup:hover .alive-image {
+        animation: none;
+    }
+
+    .signup-content-col::after {
+        display: none;
+        /* Simplify on mobile */
+    }
+}
+
+.trust-subline {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+}
+
+.gallery-track-wrapper {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    /* Move mask here so header is crisp */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    padding: 1rem 0;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 3rem;
+    /* Tighter for collection feel */
+    width: max-content;
+    padding: 2rem 1rem;
+    /* Space for hover lift */
+    animation: scroll-left 50s linear infinite;
+    /* Slower, calmer */
+    will-change: transform;
+}
+
+/* Pause on hover */
+.gallery-track:hover {
+    animation-play-state: paused;
+}
+
+/* CARD DESIGN - PILL SHAPE */
+.gallery-item {
+    width: 340px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centered layout */
+    text-align: center;
+
+    background-color: #FFFCF8;
+    /* Warm cream */
+    border-radius: 32px;
+    /* Large pill-like corners */
+    padding: 3rem 2rem;
+
+    /* Very soft, barely-there shadow */
+    box-shadow: 0 4px 20px rgba(61, 61, 59, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Subtle highlight */
+
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+/* Hover Lift */
+.gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(61, 61, 59, 0.06);
+}
+
+.gallery-img-wrapper {
+    width: 140px;
+    height: 140px;
+    border-radius: 32px;
+    /* Soft Rect ("Squircle") */
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background-color: #F0F0F0;
+    flex-shrink: 0;
+}
+
+.gallery-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Gentle zoom on hover */
+.gallery-item:hover .gallery-img-wrapper img {
+    transform: scale(1.05);
+}
+
+/* TYPOGRAPHY - SANS SERIF ITALIC */
+.gallery-text {
+    width: 100%;
+}
+
+.gallery-quote {
+    font-family: var(--font-body);
+    /* Manrope */
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.gallery-attribution {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .gallery-item {
+        width: 280px;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .gallery-track {
+        gap: 1.5rem;
+    }
+}
+
+/* Offer Block */
+.offer {
+    background-color: var(--bg-warm);
+    text-align: center;
+}
+
+.offer-content {
+    grid-column: 3 / span 8;
+}
+
+/* Product Intro */
+.product-intro {
+    background-color: #F6F4F2;
+    /* Soft warm background */
+    align-items: center;
+    position: relative;
+    /* Reset padding handled by section-padding class */
+}
+
+/* Fix grid alignment since we removed grid-12 from parent */
+.product-intro .container.grid-12 {
+    align-items: center;
+}
+
+.product-intro-image {
+    grid-column: 1 / span 7;
+}
+
+.product-intro-text {
+    grid-column: 8 / span 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Color Selector */
+.color-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.color-option {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Subtle definition */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 0;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.active {
+    box-shadow: 0 0 0 4px rgba(61, 61, 59, 0.1);
+    /* Subtle dark halo */
+}
+
+/* Image Transition - Crossfade Overlay */
+.product-intro-image {
+    position: relative;
+    /* Context for absolute overlay */
+}
+
+.product-img-clean {
+    position: relative;
+    z-index: 1;
+    will-change: opacity;
+    /* Optimization */
+}
+
+.product-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure it matches */
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(-3px);
+    /* Subtle start position */
+    will-change: opacity, transform;
+    pointer-events: none;
+    /* Let clicks pass through if needed */
+}
+
+.product-img-overlay.fading-in {
+    opacity: 1;
+    transform: translateY(0);
+    /* Settle */
+    transition: opacity 450ms ease-in-out, transform 450ms cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* Divider & Reassurance */
+.product-divider {
+    grid-column: 1 / -1;
+    height: 1px;
+    background-color: rgba(61, 61, 59, 0.15);
+    /* Subtle divider */
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.reassurance-row {
+    grid-column: 1 / span 5;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.reassurance-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.reassurance-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+}
+
+.footer-content {
+    grid-column: 4 / span 6;
+}
+
+/* Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cinematic Settle Animation */
+.cinematic-settle {
+    opacity: 0;
+    transform: translateY(15px);
+    /* Slower, heavier duration for premium feel (2.5s) */
+    transition: opacity 2.5s ease-out, transform 2.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.cinematic-settle.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Editorial Motion - Shaping for Natural Alignment */
+.editorial-motion {
+    opacity: 0;
+    transform: translateY(10px);
+    /* 6-10px max */
+    /* Duration: ~1.2-1.6s, Easing: smooth ease-out */
+    transition: opacity 1.4s ease-out, transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.editorial-motion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay text in context section to appear after image starts settling */
+.context .context-text.fade-up {
+    transition-delay: 0.4s;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .grid-12 {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        padding-top: 80px;
+    }
+
+    .hero-image img {
+        height: 50vh;
+    }
+
+    .section-padding {
+        padding: 4rem 0;
+    }
+}
